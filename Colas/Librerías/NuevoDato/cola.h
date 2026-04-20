@@ -18,6 +18,7 @@ public:
     int  size() const;
     bool isEmpty() const;
     void mostrar() const;
+    void pedirNum(int &num) const;
 };
 
 #endif

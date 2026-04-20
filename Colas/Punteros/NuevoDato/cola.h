@@ -38,6 +38,7 @@ public:
   void pop();
   int front();
   void mostrar();
+  void pedirNum(int &num);
 };
 
 #endif

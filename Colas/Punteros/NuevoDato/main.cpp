@@ -1,24 +1,28 @@
 #include <iostream>
-#include "cola.h"
+#include "cola.cpp"
+
 using namespace std;
 
 int main() {
-    Cola c;
+    int num;
 
-    c.push(10);
-    c.push(20);
-    c.push(30);
-    c.push(40);
-    c.push(50);
-    c.push(60);
+    Cola cola;
 
-    c.mostrar();
-    cout << "Frente: " << c.front() << endl;
+    cola.pedirNum(num);
+    cola.push(num);
+    cola.pedirNum(num);
+    cola.push(num);
+    cola.pedirNum(num);
+    cola.push(num);
 
-    c.pop();
-    cout << "\nDespues de pop\n";
-    c.mostrar();
-    cout << "Frente: " << c.front() << endl;
+    cola.mostrar();
+
+    cout << "front = " << cola.front() << "\n";
+
+    cola.pop();
+    cola.mostrar();
+
+    cout << "Nuevo front() = " << cola.front() << "\n";
 
     return 0;
 }

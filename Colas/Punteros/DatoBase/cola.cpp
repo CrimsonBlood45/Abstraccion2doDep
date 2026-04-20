@@ -11,7 +11,7 @@ Cola::~Cola() {
     delete[] arr;
 }
 
-bool Cola::isEmpty() {
+bool Cola::isEmpty() const {
     return (final == -1);
 }
 
@@ -47,7 +47,7 @@ void Cola::pop() {
     final--;
 }
 
-int Cola::front() {
+int Cola::front() const {
     if (isEmpty()) {
         cout << "Cola vacia\n";
         return -1;
@@ -55,7 +55,7 @@ int Cola::front() {
     return arr[final];
 }
 
-void Cola::mostrar() {
+void Cola::mostrar() const {
     if (isEmpty()) {
         cout << "Cola vacia\n";
         return;
@@ -66,4 +66,8 @@ void Cola::mostrar() {
         cout << arr[i] << " ";
     }
     cout << endl;
+}
+void Cola::pedirNum(int &num) const {
+    cout << "Ingrese un número entero: ";
+    cin >> num;
 }

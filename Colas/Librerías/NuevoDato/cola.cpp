@@ -40,3 +40,8 @@ void ColaEnteros::mostrar() const {
     }
     cout << "\n";
 }
+
+void ColaEnteros::pedirNum(int &num) const {
+    cout << "Ingrese un número entero: ";
+    cin >> num;
+}

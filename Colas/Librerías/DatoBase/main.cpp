@@ -4,11 +4,17 @@
 using namespace std;
 
 int main() {
+    int num;
+
     ColaEnteros cola;
 
-    cola.push(10);
-    cola.push(20);
-    cola.push(30);
+    cola.pedirNum(num);
+    cola.push(num);
+    cola.pedirNum(num);
+    cola.push(num);
+    cola.pedirNum(num);
+    cola.push(num);
+
     cola.mostrar();
 
     cout << "front = " << cola.front() << "\n";

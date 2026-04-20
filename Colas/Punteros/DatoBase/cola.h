@@ -13,9 +13,10 @@ public:
   void redimensionar();
   void push(int valor);
   void pop();
-  int front();
-  bool isEmpty();
-  void mostrar();
+  int front() const;
+  bool isEmpty() const;
+  void mostrar() const;
+  void pedirNum(int &num) const;
 };
 
 #endif

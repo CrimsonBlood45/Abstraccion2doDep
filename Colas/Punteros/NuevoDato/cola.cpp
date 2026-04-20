@@ -61,3 +61,7 @@ void Cola::mostrar() {
     }
     cout << endl;
 }
+void Cola::pedirNum(int &num) {
+    cout << "Ingrese un número entero: ";
+    cin >> num;
+}
