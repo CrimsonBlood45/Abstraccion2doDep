@@ -3,22 +3,21 @@
 
 using namespace std;
 
-int main() {
+int main(){
     Lista lista;
 
-    lista.insertar(10);
-    lista.insertar(20);
-    lista.insertar(30);
-    lista.insertar(40);
-    lista.insertar(50);
-    lista.insertar(60);
+    int num;
 
+    cout << "Ingrese un número para agregar a la lista: ";
+    cin >> num;
+    lista.insertar(num);
+    cout << "Ingrese otro número para agregar a la lista: ";
+    cin >> num;
+    lista.insertar(num);
+    cout << "Ingrese otro número para agregar a la lista: ";
+    cin >> num;
+    lista.insertar(num);
     lista.mostrar();
-
-    lista.eliminar(30);
-    lista.mostrar();
-
-    lista.eliminar(100);
 
     return 0;
 }

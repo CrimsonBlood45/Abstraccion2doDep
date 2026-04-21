@@ -3,12 +3,20 @@
 
 using namespace std;
 
-int main() {
+int main(){
     PilaEnteros pila;
 
-    pila.push(10);
-    pila.push(20);
-    pila.push(30);
+    int num;
+
+    cout << "Ingrese un número para agregar a la pila: ";
+    cin >> num;
+    pila.push(num);
+    cout << "Ingrese otro número para agregar a la pila: ";
+    cin >> num;
+    pila.push(num);
+    cout << "Ingrese otro número para agregar a la pila: ";
+    cin >> num;
+    pila.push(num);
     pila.mostrar();
 
     cout << "top  = " << pila.top()  << "\n";
