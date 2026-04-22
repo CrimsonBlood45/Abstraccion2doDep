@@ -2,19 +2,18 @@
 #define COLA_H
 
 #include <queue>
+#include "../../colaadt.h"
 
-class ColaEnteros {
+class ColaEnteros : public ColaADT {
 private:
     std::queue<int> cola;
-
 public:
-    void push(int valor);
-    void pop();
-    int  front() const;
-    int  size() const;
-    bool isEmpty() const;
-    void mostrar() const;
-    void pedirNum(int &num) const;
+    void push(int valor) override;
+    void pop() override;
+    int  front() const override;
+    int  size() const override;
+    bool isEmpty() const override;
+    void mostrar() const override;
 };
 
 #endif

@@ -1,22 +1,23 @@
 #ifndef COLA_H
 #define COLA_H
+#include "../../colaadt.h"
 
-class Cola {
+class ColaEnteros : public ColaADT {
 public:  
   int *arr;
   int final;
   int capacidad;
 
-  Cola(int cap = 5);
-  ~Cola();
+  ColaEnteros(int cap = 5);
+  ~ColaEnteros();
 
   void redimensionar();
-  void push(int valor);
-  void pop();
-  int front() const;
-  bool isEmpty() const;
-  void mostrar() const;
-  void pedirNum(int &num) const;
+  void push(int valor) override;
+  void pop() override;
+  int front() const override;
+  int size() const override;
+  bool isEmpty() const override;
+  void mostrar() const override;
 };
 
 #endif
