@@ -2,16 +2,16 @@
 #include "cola.h"
 using namespace std;
 
-Cola::Cola(int cap) : d(cap) {}
+ColaEnteros::ColaEnteros(int cap) : d(cap) {}
 
-Cola::~Cola() {
+ColaEnteros::~ColaEnteros() {
 }
 
-bool Cola::isEmpty() {
+bool ColaEnteros::isEmpty() const {
     return d.estaVacia();
 }
 
-void Cola::redimensionar() {
+void ColaEnteros::redimensionar() {
     int nuevaCapacidad = d.capacidad * 2;
     int* nuevoArr = new int[nuevaCapacidad];
 
@@ -27,14 +27,14 @@ void Cola::redimensionar() {
     d.capacidad = nuevaCapacidad;
 }
 
-void Cola::push(int valor) {
+void ColaEnteros::push(int valor) {
     if (d.final == d.capacidad - 1) {
         redimensionar();
     }
     d.arr[++d.final] = valor;
 }
 
-void Cola::pop() {
+void ColaEnteros::pop() {
     if (isEmpty()) {
         cout << "Cola vacia\n";
         return;
@@ -42,15 +42,18 @@ void Cola::pop() {
     d.frente++;
 }
 
-int Cola::front() {
+int ColaEnteros::front() const {
     if (isEmpty()) {
         cout << "Cola vacia\n";
         return -1;
     }
     return d.arr[d.frente];
 }
+int ColaEnteros::size() const {
+    return d.tamano();
+}
 
-void Cola::mostrar() {
+void ColaEnteros::mostrar() const {
     if (isEmpty()) {
         cout << "Cola vacia\n";
         return;
@@ -60,8 +63,4 @@ void Cola::mostrar() {
         cout << d.arr[i] << " ";
     }
     cout << endl;
-}
-void Cola::pedirNum(int &num) {
-    cout << "Ingrese un número entero: ";
-    cin >> num;
 }

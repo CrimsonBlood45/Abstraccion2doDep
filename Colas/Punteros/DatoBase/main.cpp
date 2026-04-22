@@ -1,28 +1,16 @@
 #include <iostream>
 #include "cola.cpp"
+#include "../../menucola.cpp"
 
 using namespace std;
 
 int main() {
-    int num;
-
-    Cola cola;
-
-    cola.pedirNum(num);
-    cola.push(num);
-    cola.pedirNum(num);
-    cola.push(num);
-    cola.pedirNum(num);
-    cola.push(num);
-
-    cola.mostrar();
-
-    cout << "front = " << cola.front() << "\n";
-
-    cola.pop();
-    cola.mostrar();
-
-    cout << "Nuevo front() = " << cola.front() << "\n";
-
-    return 0;
+    ColaEnteros cola;
+    MenuCola menu(&cola);
+    do {
+        menu.mostrarMenu();
+        cout << "> ";
+        cin >> menu.opt;
+        menu.ejecutarOpcion(menu.opt);
+    } while (menu.opt != 7);
 }
