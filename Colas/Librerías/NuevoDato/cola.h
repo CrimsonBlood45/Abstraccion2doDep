@@ -4,7 +4,8 @@
 #include <queue>
 #include "../../colaadt.h"
 
-struct NodoEntero {
+class NodoEntero {
+public:
     int valor;
 };
 

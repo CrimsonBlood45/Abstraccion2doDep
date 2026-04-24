@@ -12,5 +12,5 @@ int main() {
         cout << "> ";
         cin >> menu.opt;
         menu.ejecutarOpcion(menu.opt);
-    } while (menu.opt != 7);
+    } while (!menu.salirMenu());
 }
