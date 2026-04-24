@@ -9,6 +9,7 @@ public:
     MenuCola(ColaADT *cola) : cola(cola) {}
     void mostrarMenu();
     void ejecutarOpcion(int opt);
+    bool salirMenu();
 };
 
 #endif

@@ -1,25 +1,24 @@
 #include "cola.h"
 #include <iostream>
-#include <stdexcept>
 using namespace std;
 
 void ColaEnteros::push(int valor) {
     NodoEntero nodo;
     nodo.valor = valor;
     cola.push(nodo);
-    cout << "[ColaEnteros] push(" << valor << ")  |  tamaño: " << cola.size() << "\n";
+    cout << "\t[ColaEnteros] push(" << valor << ")  |  tamaño: " << cola.size() << "\n";
 }
 
 void ColaEnteros::pop() {
     if (cola.empty())
-        throw underflow_error("La cola de enteros está vacía.");
-    cout << "[ColaEnteros] pop()  |  eliminado: " << cola.front().valor << "\n";
+        cout << "\t[ColaEnteros] La cola de enteros está vacía.\n";
+    cout << "\t[ColaEnteros] pop()  |  eliminado: " << cola.front().valor << "\n";
     cola.pop();
 }
 
 int ColaEnteros::front() const {
     if (cola.empty())
-        throw underflow_error("La cola de enteros está vacía.");
+        cout << "\t[ColaEnteros] La cola de enteros está vacía.\n";
     return cola.front().valor;
 }
 
@@ -33,7 +32,7 @@ bool ColaEnteros::isEmpty() const {
 
 void ColaEnteros::mostrar() const {
     queue<NodoEntero> tmp = cola;
-    cout << "[ColaEnteros] frente → final: ";
+    cout << "\t[ColaEnteros] frente → final: ";
     while (!tmp.empty()) {
         cout << tmp.front().valor << " ";
         tmp.pop();

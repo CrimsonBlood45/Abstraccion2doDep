@@ -14,6 +14,10 @@ void MenuCola::mostrarMenu() {
     cout << "7. Salir" << std::endl;
 }
 void MenuCola::ejecutarOpcion(int opt) {
+    if((opt == 2 || opt == 3 || opt == 4 || opt == 5 || opt == 6) && cola->isEmpty()) {
+        cout << "La cola está vacía. Por favor, agregue elementos antes de realizar esta operación." << std::endl;
+        return;
+    }
     switch (opt) {
         case 1:
             cout << "Opción: Agregar elemento a la cola (push)" << std::endl;
@@ -47,4 +51,7 @@ void MenuCola::ejecutarOpcion(int opt) {
         default:
             cout << "Opción no válida. Por favor, intente nuevamente." << std::endl;
     }
+}
+bool MenuCola::salirMenu() {
+    return opt == 7;
 }
