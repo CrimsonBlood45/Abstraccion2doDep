@@ -1,31 +1,16 @@
 #include <iostream>
-#include "pila.cpp"
+#include "lista.cpp"
+#include "../../menulista.cpp"
 
 using namespace std;
 
-int main(){
-    PilaEnteros pila;
-
-    int num;
-
-    cout << "Ingrese un número para agregar a la pila: ";
-    cin >> num;
-    pila.push(num);
-    cout << "Ingrese otro número para agregar a la pila: ";
-    cin >> num;
-    pila.push(num);
-    cout << "Ingrese otro número para agregar a la pila: ";
-    cin >> num;
-    pila.push(num);
-    pila.mostrar();
-
-    cout << "top  = " << pila.top()  << "\n";
-    cout << "size = " << pila.size() << "\n";
-
-    pila.pop();
-    pila.mostrar();
-
-    cout << "Nuevo top() = " << pila.top() << "\n";
-
-    return 0;
+int main() {
+    ListaEnteros lista;
+    MenuLista menu(&lista);
+    do {
+        menu.mostrarMenu();
+        cout << "> ";
+        cin >> menu.opt;
+        menu.ejecutarOpcion(menu.opt);
+    } while (!menu.salirMenu());
 }
