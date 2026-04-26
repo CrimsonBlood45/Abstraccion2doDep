@@ -1,23 +1,16 @@
 #include <iostream>
 #include "lista.cpp"
+#include "../../menulista.cpp"
 
 using namespace std;
 
-int main(){
-    Lista lista;
-
-    int num;
-
-    cout << "Ingrese un número para agregar a la lista: ";
-    cin >> num;
-    lista.insertar(num);
-    cout << "Ingrese otro número para agregar a la lista: ";
-    cin >> num;
-    lista.insertar(num);
-    cout << "Ingrese otro número para agregar a la lista: ";
-    cin >> num;
-    lista.insertar(num);
-    lista.mostrar();
-
-    return 0;
+int main() {
+    ListaEnteros lista;
+    MenuLista menu(&lista);
+    do {
+        menu.mostrarMenu();
+        cout << "> ";
+        cin >> menu.opt;
+        menu.ejecutarOpcion(menu.opt);
+    } while (!menu.salirMenu());
 }

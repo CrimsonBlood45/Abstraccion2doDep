@@ -1,23 +1,24 @@
 #ifndef LISTA_H
 #define LISTA_H
-
 #include <list>
+#include "../../listaadt.h"
 
-struct NodoEntero {
+class NodoEntero {
+public:
     int valor;
 };
 
-class ListaEnteros {
+class ListaEnteros : public ListaADT {
 private:
-    std::list<NodoEntero> lista; // el final (back) será el tope
+    std::list<NodoEntero> lista;
 
 public:
-    void push(int valor);
-    void pop();
-    int  top() const;
-    int  size() const;
-    bool isEmpty() const;
-    void mostrar() const;
+    void push(int valor) override;
+    void pop() override;
+    int  top() const override;
+    int  size() const override;
+    bool isEmpty() const override;
+    void mostrar() const override;
 };
 
 #endif

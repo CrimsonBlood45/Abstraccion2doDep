@@ -1,31 +1,30 @@
 #ifndef LISTA_H
 #define LISTA_H
-#include <iostream>
-using namespace std;
+#include "../../listaadt.h"
 
-class Lista {
+class Nodo {
+public:
+    int   dato;
+    Nodo* siguiente;
+    Nodo(int valor, Nodo* sig = nullptr) : dato(valor), siguiente(sig) {}
+};
+
+class ListaEnteros : public ListaADT {
 private:
-    struct Elemento {
-        int valor;
-        bool ocupado;
-    };
-
-    struct Bloque {
-        Elemento* elementos;
-        int capacidad;
-        int tam;
-    };
-
-    Bloque bloque;
-
-    void redimensionar();
+    Nodo* cabeza;
+    Nodo* cola;
+    int   cantidad;
 
 public:
-    Lista(int cap = 5);
-    ~Lista();
-    void insertar(int valor);
-    void eliminar(int valor);
-    void mostrar();
+    ListaEnteros();
+    ~ListaEnteros();
+
+    void push(int valor) override;
+    void pop()           override;
+    int  top()     const override;
+    int  size()    const override;
+    bool isEmpty() const override;
+    void mostrar() const override;
 };
 
 #endif
