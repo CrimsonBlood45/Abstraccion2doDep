@@ -14,7 +14,7 @@ void MenuCola::mostrarMenu() {
     cout << "7. Salir" << std::endl;
 }
 void MenuCola::ejecutarOpcion(int opt) {
-    if((opt == 2 || opt == 3 || opt == 4 || opt == 5 || opt == 6) && cola->isEmpty()) {
+    if((opt == 2 || opt == 3 || opt == 4 || opt == 6) && cola->isEmpty()) {
         cout << "La cola está vacía. Por favor, agregue elementos antes de realizar esta operación." << std::endl;
         return;
     }
