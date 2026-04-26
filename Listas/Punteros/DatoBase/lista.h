@@ -1,21 +1,23 @@
 #ifndef LISTA_H
 #define LISTA_H
+#include "../../listaadt.h"
 
-class Lista {
+#define CAPACIDAD_MAX 100
+
+class ListaEnteros : public ListaADT {
 private:
-    int* datos;
-    int capacidad;
-    int tam;
-
-    void redimensionar();
+    int datos[CAPACIDAD_MAX];
+    int cantidad;
 
 public:
-    Lista(int cap = 5);
-    ~Lista();
+    ListaEnteros();
 
-    void insertar(int valor);
-    void eliminar(int valor);
-    void mostrar();
+    void push(int valor) override;
+    void pop()           override;
+    int  top()     const override;
+    int  size()    const override;
+    bool isEmpty() const override;
+    void mostrar() const override;
 };
 
 #endif

@@ -7,8 +7,8 @@ void ListaEnteros::push(int valor) {
     NodoEntero nodo;
     nodo.valor = valor;
 
-    lista.push_back(nodo); // tope = back()
-    cout << "[ListaEnteros] push(" << valor << ")  |  tamaño: " << lista.size() << "\n";
+    lista.push_back(nodo);
+    cout << "\t[ListaEnteros] push(" << valor << ")  |  tamaño: " << lista.size() << "\n";
 }
 
 void ListaEnteros::pop() {
@@ -17,7 +17,7 @@ void ListaEnteros::pop() {
         return;
     }
 
-    cout << "[ListaEnteros] pop()  |  eliminado: " << lista.back().valor << "\n";
+    cout << "\t[ListaEnteros] pop()  |  eliminado: " << lista.back().valor << "\n";
     lista.pop_back();
 }
 
@@ -38,7 +38,7 @@ bool ListaEnteros::isEmpty() const {
 }
 
 void ListaEnteros::mostrar() const {
-    cout << "[ListaEnteros] tope → base: ";
+    cout << "\t[ListaEnteros] tope → base: ";
 
     // Recorremos desde el final al inicio para simular "tope → base"
     for (auto it = lista.rbegin(); it != lista.rend(); ++it) {

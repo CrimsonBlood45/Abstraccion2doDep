@@ -1,70 +1,97 @@
 #include "lista.h"
+#include <iostream>
 
-Lista::Lista(int cap) {
-    bloque.capacidad = cap;
-    bloque.tam = 0;
-    bloque.elementos = new Elemento[bloque.capacidad];
+using namespace std;
 
-    for (int i = 0; i < bloque.capacidad; i++) {
-        bloque.elementos[i].ocupado = false;
-        bloque.elementos[i].valor = 0;
+ListaEnteros::ListaEnteros() : cabeza(nullptr), cola(nullptr), cantidad(0) {}
+
+ListaEnteros::~ListaEnteros() {
+    Nodo* actual = cabeza;
+    while (actual != nullptr) {
+        Nodo* siguiente = actual->siguiente;
+        delete actual;
+        actual = siguiente;
     }
+    cabeza   = nullptr;
+    cola     = nullptr;
+    cantidad = 0;
 }
 
-Lista::~Lista() {
-    delete[] bloque.elementos;
-}
+void ListaEnteros::push(int valor) {
+    Nodo* nuevo = new Nodo(valor);
 
-void Lista::redimensionar() {
-    bloque.capacidad *= 2;
-    Elemento* nuevo = new Elemento[bloque.capacidad];
-
-    for (int i = 0; i < bloque.tam; i++) {
-        nuevo[i] = bloque.elementos[i];
-    }
-    for (int i = bloque.tam; i < bloque.capacidad; i++) {
-        nuevo[i].valor = 0;
-        nuevo[i].ocupado = false;
+    if (cola == nullptr) {
+        cabeza = nuevo;
+        cola   = nuevo;
+    } else {
+        cola->siguiente = nuevo;
+        cola = nuevo;
     }
 
-    delete[] bloque.elementos;
-    bloque.elementos = nuevo;
+    cantidad++;
+    cout << "\t[ListaEnteros] push(" << valor << ")  |  tamaño: " << cantidad << "\n";
 }
 
-void Lista::insertar(int valor) {
-    if (bloque.tam == bloque.capacidad) {
-        redimensionar();
+void ListaEnteros::pop() {
+    if (cabeza == nullptr) {
+        cout << "\t[ListaEnteros] Error: La lista de enteros está vacía.\n";
+        return;
     }
-    bloque.elementos[bloque.tam].valor = valor;
-    bloque.elementos[bloque.tam].ocupado = true;
-    bloque.tam++;
-    cout << "Insertado: " << valor << endl;
-}
 
-void Lista::eliminar(int valor) {
-    for (int i = 0; i < bloque.tam; i++) {
-        if (bloque.elementos[i].ocupado && bloque.elementos[i].valor == valor) {
-            // Desplazar elementos hacia la izquierda
-            for (int j = i; j < bloque.tam - 1; j++) {
-                bloque.elementos[j] = bloque.elementos[j + 1];
-            }
-            bloque.elementos[bloque.tam - 1].valor = 0;
-            bloque.elementos[bloque.tam - 1].ocupado = false;
-            bloque.tam--;
-            cout << "Eliminado: " << valor << endl;
-            return;
+    cout << "\t[ListaEnteros] pop()  |  eliminado: " << cola->dato << "\n";
+
+    if (cabeza == cola) {
+        delete cabeza;
+        cabeza = nullptr;
+        cola   = nullptr;
+    } else {
+        Nodo* penultimo = cabeza;
+        while (penultimo->siguiente != cola) {
+            penultimo = penultimo->siguiente;
         }
+        delete cola;
+        penultimo->siguiente = nullptr;
+        cola = penultimo;
     }
-    cout << "Valor " << valor << " no encontrado." << endl;
+
+    cantidad--;
 }
 
-void Lista::mostrar() {
-    cout << "Lista: [";
-    for (int i = 0; i < bloque.tam; i++) {
-        if (bloque.elementos[i].ocupado) {
-            cout << bloque.elementos[i].valor;
-            if (i < bloque.tam - 1) cout << ", ";
-        }
+int ListaEnteros::top() const {
+    if (cola == nullptr) {
+        cout << "\t[ListaEnteros] Error: La lista de enteros está vacía.\n";
+        return 0;
     }
-    cout << "]" << endl;
+    return cola->dato;
+}
+
+int ListaEnteros::size() const {
+    return cantidad;
+}
+
+bool ListaEnteros::isEmpty() const {
+    return cabeza == nullptr;
+}
+
+void ListaEnteros::mostrar() const {
+    cout << "[ListaEnteros] tope → base: ";
+
+    if (cabeza == nullptr) {
+        cout << "(vacía)\n";
+        return;
+    }
+
+    int* buf = new int[cantidad];
+    Nodo* actual = cabeza;
+    for (int i = 0; i < cantidad; i++) {
+        buf[i] = actual->dato;
+        actual = actual->siguiente;
+    }
+
+    for (int i = cantidad - 1; i >= 0; i--) {
+        cout << buf[i] << " ";
+    }
+    delete[] buf;
+
+    cout << "\n";
 }

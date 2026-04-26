@@ -1,62 +1,53 @@
-#include <iostream>
 #include "lista.h"
+#include <iostream>
 
 using namespace std;
 
-Lista::Lista(int cap) {
-    capacidad = cap;
-    tam = 0;
-    datos = new int[capacidad];
-}
+ListaEnteros::ListaEnteros() : cantidad(0) {}
 
-Lista::~Lista() {
-    delete[] datos;
-}
-
-void Lista::redimensionar() {
-    capacidad *= 2;
-    int* nuevo = new int[capacidad];
-
-    for (int i = 0; i < tam; i++) {
-        nuevo[i] = datos[i];
+void ListaEnteros::push(int valor) {
+    if (cantidad >= CAPACIDAD_MAX) {
+        cout << "\t[ListaEnteros] Error: La lista está llena.\n";
+        return;
     }
-
-    delete[] datos;
-    datos = nuevo;
+    datos[cantidad] = valor;
+    cantidad++;
+    cout << "\t[ListaEnteros] push(" << valor << ")  |  tamaño: " << cantidad << "\n";
 }
 
-void Lista::insertar(int valor) {
-    if (tam == capacidad) {
-        redimensionar();
+void ListaEnteros::pop() {
+    if (cantidad == 0) {
+        cout << "\t[ListaEnteros] Error: La lista de enteros está vacía.\n";
+        return;
     }
-    datos[tam++] = valor;
+    cout << "\t[ListaEnteros] pop()  |  eliminado: " << datos[cantidad - 1] << "\n";
+    cantidad--;
 }
 
-void Lista::eliminar(int valor) {
-    int pos = -1;
-
-    for (int i = 0; i < tam; i++) {
-        if (datos[i] == valor) {
-            pos = i;
-            break;
-        }
+int ListaEnteros::top() const {
+    if (cantidad == 0) {
+        cout << "\t[ListaEnteros] Error: La lista de enteros está vacía.\n";
+        return 0;
     }
-
-    if (pos != -1) {
-        for (int i = pos; i < tam - 1; i++) {
-            datos[i] = datos[i + 1];
-        }
-        tam--;
-        cout << "Elemento eliminado\n";
-    } else {
-        cout << "Elemento no encontrado\n";
-    }
+    return datos[cantidad - 1];
 }
 
-void Lista::mostrar() {
-    cout << "Lista: ";
-    for (int i = 0; i < tam; i++) {
+int ListaEnteros::size() const {
+    return cantidad;
+}
+
+bool ListaEnteros::isEmpty() const {
+    return cantidad == 0;
+}
+
+void ListaEnteros::mostrar() const {
+    cout << "[ListaEnteros] tope → base: ";
+    if (cantidad == 0) {
+        cout << "(vacía)\n";
+        return;
+    }
+    for (int i = cantidad - 1; i >= 0; i--) {
         cout << datos[i] << " ";
     }
-    cout << endl;
+    cout << "\n";
 }
