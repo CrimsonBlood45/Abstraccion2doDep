@@ -1,11 +1,16 @@
-#ifndef LISTA_H
-#define LISTA_H
+#ifndef PILA_H
+#define PILA_H
 #include <stack>
-#include "../../listaadt.h"
+#include "../../pilaadt.h"
 
-class ListaEnteros : public ListaADT {
+class NodoPila {
+public:
+    int valor;
+};
+
+class PilaEnteros : public PilaADT {
 private:
-    std::stack<int> pila;
+    std::stack<NodoPila> pila;
 public:
     void push(int valor) override;
     void pop()           override;

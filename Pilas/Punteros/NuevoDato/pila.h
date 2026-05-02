@@ -1,24 +1,24 @@
-#ifndef LISTA_H
-#define LISTA_H
-#include "../../listaadt.h"
+#ifndef PILA_H
+#define PILA_H
+#include "../../pilaadt.h"
 
-class NodoEntero {
+class NodoPila {
 public:
     int         valor;
-    NodoEntero* siguiente;
+    NodoPila* siguiente;
 
-    NodoEntero(int val, NodoEntero* sig = nullptr)
+    NodoPila(int val, NodoPila* sig = nullptr)
         : valor(val), siguiente(sig) {}
 };
 
-class ListaEnteros : public ListaADT {
+class PilaEnteros : public PilaADT {
 private:
-    NodoEntero* tope;
+    NodoPila* tope;
     int         cantidad;
 
 public:
-    ListaEnteros();
-    ~ListaEnteros();
+    PilaEnteros();
+    ~PilaEnteros();
 
     void push(int valor) override;
     void pop()           override;

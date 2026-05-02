@@ -1,16 +1,18 @@
-#ifndef LISTA_H
-#define LISTA_H
-#include "../../listaadt.h"
+#ifndef PILA_H
+#define PILA_H
+#include "../../pilaadt.h"
 
-#define CAPACIDAD_MAX 100
-
-class ListaEnteros : public ListaADT {
+class PilaEnteros : public PilaADT {
 private:
-    int datos[CAPACIDAD_MAX];
-    int cantidad;
+    int*  datos;
+    int   cantidad;
+    int   capacidad;
+
+    void redimensionar();
 
 public:
-    ListaEnteros();
+    PilaEnteros(int cap = 4);
+    ~PilaEnteros();
 
     void push(int valor) override;
     void pop()           override;

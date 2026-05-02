@@ -1,18 +1,18 @@
-#include "lista.h"
+#include "pila.h"
 #include <iostream>
 
 using namespace std;
 
-ListaEnteros::ListaEnteros(int cap)
+PilaEnteros::PilaEnteros(int cap)
     : cantidad(0), capacidad(cap) {
     datos = new int[capacidad];
 }
 
-ListaEnteros::~ListaEnteros() {
+PilaEnteros::~PilaEnteros() {
     delete[] datos;
 }
 
-void ListaEnteros::redimensionar() {
+void PilaEnteros::redimensionar() {
     int nuevaCapacidad = capacidad * 2;
     int* nuevo = new int[nuevaCapacidad];
     for (int i = 0; i < cantidad; i++) {
@@ -23,42 +23,42 @@ void ListaEnteros::redimensionar() {
     capacidad = nuevaCapacidad;
 }
 
-void ListaEnteros::push(int valor) {
+void PilaEnteros::push(int valor) {
     if (cantidad == capacidad) {
         redimensionar();
     }
     datos[cantidad] = valor;
     cantidad++;
-    cout << "\t[ListaEnteros] push(" << valor << ")  |  tamaño: " << cantidad << "\n";
+    cout << "\t[PilaEnteros] push(" << valor << ")  |  tamaño: " << cantidad << "\n";
 }
 
-void ListaEnteros::pop() {
+void PilaEnteros::pop() {
     if (cantidad == 0) {
-        cout << "\t[ListaEnteros] Error: La lista de enteros está vacía.\n";
+        cout << "\t[PilaEnteros] Error: La pila de enteros está vacía.\n";
         return;
     }
-    cout << "\t[ListaEnteros] pop()  |  eliminado: " << datos[cantidad - 1] << "\n";
+    cout << "\t[PilaEnteros] pop()  |  eliminado: " << datos[cantidad - 1] << "\n";
     cantidad--;
 }
 
-int ListaEnteros::top() const {
+int PilaEnteros::top() const {
     if (cantidad == 0) {
-        cout << "\t[ListaEnteros] Error: La lista de enteros está vacía.\n";
+        cout << "\t[PilaEnteros] Error: La pila de enteros está vacía.\n";
         return 0;
     }
     return datos[cantidad - 1];
 }
 
-int ListaEnteros::size() const {
+int PilaEnteros::size() const {
     return cantidad;
 }
 
-bool ListaEnteros::isEmpty() const {
+bool PilaEnteros::isEmpty() const {
     return cantidad == 0;
 }
 
-void ListaEnteros::mostrar() const {
-    cout << "[ListaEnteros] tope → base: ";
+void PilaEnteros::mostrar() const {
+    cout << "[PilaEnteros] tope → base: ";
     if (cantidad == 0) {
         cout << "(vacía)\n";
         return;

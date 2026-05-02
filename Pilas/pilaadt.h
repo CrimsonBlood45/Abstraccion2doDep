@@ -1,7 +1,7 @@
-#ifndef LISTAADT_H
-#define LISTAADT_H
+#ifndef PILAADT_H
+#define PILAADT_H
 
-class ListaADT {
+class PilaADT {
 public:
     virtual void push(int valor) = 0;
     virtual void pop() = 0;
