@@ -3,8 +3,8 @@
 
 class ColaADT {
 public:
-    virtual void push(int valor) = 0;
-    virtual void pop() = 0;
+    virtual void enqueue(int valor) = 0;
+    virtual void dequeue() = 0;
     virtual int front() const = 0;
     virtual int size() const = 0;
     virtual bool isEmpty() const = 0;

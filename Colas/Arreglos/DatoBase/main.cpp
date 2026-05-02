@@ -1,12 +1,12 @@
 #include <iostream>
-#include "lista.cpp"
-#include "../../menulista.cpp"
+#include "cola.cpp"
+#include "../../menucola.cpp"
 
 using namespace std;
 
 int main() {
-    ListaEnteros lista;
-    MenuLista menu(&lista);
+    ColaEnteros cola;
+    MenuCola menu(&cola);
     do {
         menu.mostrarMenu();
         cout << "> ";

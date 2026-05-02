@@ -2,17 +2,17 @@
 #include <iostream>
 using namespace std;
 
-void ColaEnteros::push(int valor) {
+void ColaEnteros::enqueue(int valor) {
     NodoEntero nodo;
     nodo.valor = valor;
     cola.push(nodo);
-    cout << "\t[ColaEnteros] push(" << valor << ")  |  tamaño: " << cola.size() << "\n";
+    cout << "\t[ColaEnteros] enqueue(" << valor << ")  |  tamaño: " << cola.size() << "\n";
 }
 
-void ColaEnteros::pop() {
+void ColaEnteros::dequeue() {
     if (cola.empty())
         cout << "\t[ColaEnteros] La cola de enteros está vacía.\n";
-    cout << "\t[ColaEnteros] pop()  |  eliminado: " << cola.front().valor << "\n";
+    cout << "\t[ColaEnteros] dequeue()  |  eliminado: " << cola.front().valor << "\n";
     cola.pop();
 }
 

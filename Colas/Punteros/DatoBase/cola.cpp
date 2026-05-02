@@ -28,14 +28,14 @@ void ColaEnteros::redimensionar() {
     capacidad = nuevaCapacidad;
 }
 
-void ColaEnteros::push(int valor) {
+void ColaEnteros::enqueue(int valor) {
     if (final == capacidad - 1) {
         redimensionar();
     }
     arr[++final] = valor;
 }
 
-void ColaEnteros::pop() {
+void ColaEnteros::dequeue() {
     if (isEmpty()) {
         cout << "Cola vacia\n";
         return;

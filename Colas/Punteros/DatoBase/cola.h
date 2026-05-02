@@ -12,8 +12,8 @@ public:
   ~ColaEnteros();
 
   void redimensionar();
-  void push(int valor) override;
-  void pop() override;
+  void enqueue(int valor) override;
+  void dequeue() override;
   int front() const override;
   int size() const override;
   bool isEmpty() const override;

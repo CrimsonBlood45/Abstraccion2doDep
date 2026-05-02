@@ -5,8 +5,8 @@ using namespace std;
 
 void MenuCola::mostrarMenu() {
     cout << "=== Menú de Operaciones con Cola ===" << std::endl;
-    cout << "1. Agregar elemento a la cola (push)" << std::endl;
-    cout << "2. Eliminar elemento de la cola (pop)" << std::endl;
+    cout << "1. Agregar elemento a la cola (enqueue)" << std::endl;
+    cout << "2. Eliminar elemento de la cola (dequeue)" << std::endl;
     cout << "3. Ver el frente de la cola (front)" << std::endl;
     cout << "4. Ver el tamaño de la cola (size)" << std::endl;
     cout << "5. Ver si la cola está vacía (isEmpty)" << std::endl;
@@ -20,14 +20,14 @@ void MenuCola::ejecutarOpcion(int opt) {
     }
     switch (opt) {
         case 1:
-            cout << "Opción: Agregar elemento a la cola (push)" << std::endl;
+            cout << "Opción: Agregar elemento a la cola (enqueue)" << std::endl;
             cout << "Ingrese el número a agregar: ";
             cin >> num;
-            cola->push(num);
+            cola->enqueue(num);
             break;
         case 2:
-            cout << "Opción: Eliminar elemento de la cola (pop)" << std::endl;
-            cola->pop();
+            cout << "Opción: Eliminar elemento de la cola (dequeue)" << std::endl;
+            cola->dequeue();
             break;
         case 3:
             cout << "Opción: Ver el frente de la cola (front)" << std::endl;

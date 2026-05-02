@@ -8,8 +8,8 @@ class ColaEnteros : public ColaADT {
 private:
     std::queue<int> cola;
 public:
-    void push(int valor) override;
-    void pop() override;
+    void enqueue(int valor) override;
+    void dequeue() override;
     int  front() const override;
     int  size() const override;
     bool isEmpty() const override;
