@@ -1,0 +1,45 @@
+#include "lista.h"
+#include <iostream>
+
+using namespace std;
+
+void ListaEnteros::insertAt(int valor) {
+    lista.push_back(valor); // tope = back()
+    cout << "\t[ListaEnteros] insertAt(" << valor << ")  |  tamaño: " << lista.size() << "\n";
+}
+
+void ListaEnteros::removeAt() {
+    if (lista.empty()) {
+        cout << "\t[ListaEnteros] Error: La lista de enteros está vacía." << "\n";
+        return;
+    }
+
+    cout << "\t[ListaEnteros] removeAt()  |  eliminado: " << lista.back() << "\n";
+    lista.pop_back();
+}
+
+int ListaEnteros::get() const {
+    if (lista.empty()) {
+        cout << "\t[ListaEnteros] Error: La lista de enteros está vacía." << "\n";
+        return 0;
+    }
+    return lista.back();
+}
+
+int ListaEnteros::size() const {
+    return static_cast<int>(lista.size());
+}
+
+bool ListaEnteros::isEmpty() const {
+    return lista.empty();
+}
+
+void ListaEnteros::mostrar() const {
+    cout << "[ListaEnteros] tope → base: ";
+
+    for (auto it = lista.rbegin(); it != lista.rend(); ++it) {
+        cout << *it << " ";
+    }
+
+    cout << "\n";
+}
