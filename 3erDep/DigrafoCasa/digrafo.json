@@ -1,0 +1,18 @@
+{
+  "digrafo": {
+    "nombre": "Metro Aquiles Serdán",
+    "nodos": [
+      { "id": 1, "etiqueta": "Metro Aquiles Serdán" },
+      { "id": 2, "etiqueta": "Metro Tacuba" },
+      { "id": 3, "etiqueta": "Metro Xola" },
+      { "id": 4, "etiqueta": "MB Xola" },
+      { "id": 5, "etiqueta": "MB Iztacalco" }
+    ],
+    "aristas": [
+      { "origen": "Metro Aquiles Serdán", "destino": "Metro Tacuba",  "costo": "$5", "tiempo": "10 min" },
+      { "origen": "Metro Tacuba",         "destino": "Metro Xola",    "costo": "$0", "tiempo": "40 min" },
+      { "origen": "Metro Xola",           "destino": "MB Xola",       "costo": "$0", "tiempo": "7 min"  },
+      { "origen": "MB Xola",              "destino": "MB Iztacalco",  "costo": "$6", "tiempo": "18 min" }
+    ]
+  }
+}

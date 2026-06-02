@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<digrafo nombre="Metro Aquiles Serdán">
+
+  <nodos>
+    <nodo id="1" etiqueta="Metro Aquiles Serdán"/>
+    <nodo id="2" etiqueta="Metro Tacuba"/>
+    <nodo id="3" etiqueta="Metro Xola"/>
+    <nodo id="4" etiqueta="MB Xola"/>
+    <nodo id="5" etiqueta="MB Iztacalco"/>
+  </nodos>
+
+  <aristas>
+    <arista origen="Metro Aquiles Serdán" destino="Metro Tacuba" costo="$5" tiempo="10 min"/>
+    <arista origen="Metro Tacuba"         destino="Metro Xola"   costo="$0" tiempo="40 min"/>
+    <arista origen="Metro Xola"           destino="MB Xola"      costo="$0" tiempo="7 min"/>
+    <arista origen="MB Xola"              destino="MB Iztacalco" costo="$6" tiempo="18 min"/>
+  </aristas>
+
+</digrafo>

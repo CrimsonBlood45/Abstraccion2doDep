@@ -1,0 +1,5 @@
+origen,destino,costo,tiempo
+Metro Aquiles Serdán,Metro Tacuba,$5,10 min
+Metro Tacuba,Metro Xola,$0,40 min
+Metro Xola,MB Xola,$0,7 min
+MB Xola,MB Iztacalco,$6,18 min

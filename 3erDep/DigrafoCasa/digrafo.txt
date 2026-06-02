@@ -1,0 +1,23 @@
+=====================================================
+ DIGRAFO: Metro Aquiles Serdán
+=====================================================
+
+NODOS (5)
+-----------------------------------------------------
+ID  | Etiqueta
+-----------------------------------------------------
+1   | Metro Aquiles Serdán
+2   | Metro Tacuba
+3   | Metro Xola
+4   | MB Xola
+5   | MB Iztacalco
+
+ARISTAS (4)
+-----------------------------------------------------
+Origen               | Destino       | Costo | Tiempo
+-----------------------------------------------------
+Metro Aquiles Serdán | Metro Tacuba  | $5    | 10 min
+Metro Tacuba         | Metro Xola    | $0    | 40 min
+Metro Xola           | MB Xola       | $0    | 7 min
+MB Xola              | MB Iztacalco  | $6    | 18 min
+=====================================================
