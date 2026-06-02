@@ -20,15 +20,11 @@ Se practicó la sobrecarga de funciones para manejar distintos números de pará
 
 ---
 
-### 1erDep_outs
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proyecto clon de 1erDep que implementa el archivo compartido output_writer.h en la raíz del proyecto, centralizando toda la lógica de escritura a cuatro archivos de salida. Este header contiene la clase TeeBuffer y OutputCapture, que permiten capturar la salida de cout en tiempo real sin interrumpir la interacción con el usuario, así como las funciones writeJSON, writeXML, writeCSV y writeTXT que generan los archivos out.json, out.xml, out.csv y out.txt en la raíz del proyecto con el nombre del programa y su salida correspondiente.
-A nivel de cada programa, todos los main.cpp fueron modificados para incluir output_writer.h e instanciar un OutputCapture al inicio, de modo que toda la sesión quede capturada y escrita a los archivos al terminar.
-
----
-
 ## Segundo Departamental  
 
 ## Tercer Departamental  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se crean dos proyectos clon de 1erDep y 2doDep que implementan el archivo compartido output_writer.h en la raíz del proyecto, centralizando toda la lógica de escritura a cuatro archivos de salida. Este header contiene la clase TeeBuffer y OutputCapture, que permiten capturar la salida de cout en tiempo real sin interrumpir la interacción con el usuario, así como las funciones writeJSON, writeXML, writeCSV y writeTXT que generan los archivos out.json, out.xml, out.csv y out.txt en la raíz del proyecto con el nombre del programa y su salida correspondiente.
+A nivel de cada programa, todos los main.cpp fueron modificados para incluir output_writer.h e instanciar un OutputCapture al inicio, de modo que toda la sesión quede capturada y escrita a los archivos al terminar.
 ## Compilación y Ejecución
 A continuación se detalla cómo compilar y ejecutar los proyectos de este repositorio. El usuario debe contar con una instalación previa de g++ y git, además de tener acceso a una terminal linux.  
 ### 1. Clonar el repositorio
