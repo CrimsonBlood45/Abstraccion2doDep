@@ -1,10 +1,47 @@
-## 💻 Abstracción y uso de datos: Segundo Departamental 💻
-Ejercicios con listas, colas, pilas y métodos de ordenamiento correspondientes al segundo departamental de la materia "Abstracción y uso de datos"  
+## 💻 Abstracción y uso de datos / IPN - UPIICSA 💻
+  
 **Secuencia:** 3CM30  
 **Docente:** Entzana Garduño Yventz  
-**Autores:**
+**Carrera:** Licenciatura en Ciencias de la Informática
+
+## Autores  
 - Carrera Rojo Jane Adriana
 - Frías Martinez Vanessa Judith
 - Saavedra Rodríguez Aarón Emanuel
 
-**Carrera:** Licenciatura en Ciencias de la Informática
+---
+
+## Contenido
+El presente repositorio contiene en su totalidad las prácticas para los tres departamentales de la materia "Abstracción y uso de datos", obedeciendo la siguiente estructura:
+## Primer Departamental / (1erDep y 1erDep_out)
+### 1erDep  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se abarcan los fundamentos de la programación orientada a objetos en C++. Se trabajó con la definición de clases y structs, comparando sus diferencias en cuanto a acceso y representación en memoria mediante el operador sizeof. Se usaron arreglos de objetos para almacenar colecciones de datos, y se organizó el código en archivos separados de encabezado y de implementación (.h y .cpp).
+Se practicó la sobrecarga de funciones para manejar distintos números de parámetros en una misma operación, la herencia para extender clases base sin modificarlas, y la sobreescritura de métodos virtuales para cambiar el comportamiento heredado. Finalmente, se aplicó la recursividad para calcular elementos en estructuras fractales como el triángulo de Sierpinski y el conjunto de Cantor.  
+
+---
+
+### 1erDep_outs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proyecto clon de 1erDep que implementa el archivo compartido output_writer.h en la raíz del proyecto, centralizando toda la lógica de escritura a cuatro archivos de salida. Este header contiene la clase TeeBuffer y OutputCapture, que permiten capturar la salida de cout en tiempo real sin interrumpir la interacción con el usuario, así como las funciones writeJSON, writeXML, writeCSV y writeTXT que generan los archivos out.json, out.xml, out.csv y out.txt en la raíz del proyecto con el nombre del programa y su salida correspondiente.
+A nivel de cada programa, todos los main.cpp fueron modificados para incluir output_writer.h e instanciar un OutputCapture al inicio, de modo que toda la sesión quede capturada y escrita a los archivos al terminar.
+
+---
+
+## Segundo Departamental  
+
+## Tercer Departamental  
+## Compilación y Ejecución
+A continuación se detalla cómo compilar y ejecutar los proyectos de este repositorio. El usuario debe contar con una instalación previa de g++ y git, además de tener acceso a una terminal linux.  
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/CrimsonBlood45/AbstraccionyUD
+```  
+### 2. Compilar  
+Posicionado en la carpeta del proyecto que se quiere compilar. Colocar el nombre deseado para el ejecutable en lugar de "nombredelejecutable":  
+```bash
+g++ main.cpp -o "nombredelejecutable"
+```
+### 3. Ejecución  
+Habiendo compilado y estando posicionado en la carpeta del proyecto que se quiere ejecutar:  
+```bash
+./"nombredelejecutable"
+```
