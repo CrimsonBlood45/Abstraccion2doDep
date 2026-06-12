@@ -1,6 +1,6 @@
 [
   {
-    "programa": "SerpinskiCantor",
-    "salida": "Ingresa Nivel (Serpinski): Triangulos en nivel 4: 161\n\nIngresa Nivel (Cantor): Ingresa Dimension (Cantor): Elementos en nivel 2, dimension 5: 1024\n"
+    "programa": "Ejercicio8",
+    "salida": "Numero 1: Numero 2: Numero 3: Numero 4: Numero 5: Suma: 25\nPromedio: 5\nMaximo: 7\nMinimo: 3\n"
   }
 ]
