@@ -6,14 +6,16 @@
 
 ## Autores  
 - Carrera Rojo Jane Adriana
+- Flores Maya Valeria
 - Frías Martinez Vanessa Judith
+- Martinez Valencia Karla Itzel
 - Saavedra Rodríguez Aarón Emanuel
 
 ---
 
 ## Contenido
-El presente repositorio contiene en su totalidad las prácticas para los tres departamentales de la materia "Abstracción y uso de datos", obedeciendo la siguiente estructura:
-## Primer Departamental / (1erDep y 1erDep_out)
+El presente repositorio contiene en su totalidad las prácticas para los tres departamentales de la asignatura "Abstracción y uso de datos", obedeciendo la siguiente estructura:
+## Primer Departamental
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se abarcan los fundamentos de la programación orientada a objetos en C++. Se trabajó con la definición de clases y structs, comparando sus diferencias en cuanto a acceso y representación en memoria mediante el operador sizeof. Se usaron arreglos de objetos para almacenar colecciones de datos, y se organizó el código en archivos separados de encabezado y de implementación (.h y .cpp).
 Se practicó la sobrecarga de funciones para manejar distintos números de parámetros en una misma operación, la herencia para extender clases base sin modificarlas, y la sobreescritura de métodos virtuales para cambiar el comportamiento heredado. Finalmente, se aplicó la recursividad para calcular elementos en estructuras fractales como el triángulo de Sierpinski y el conjunto de Cantor.  
 
@@ -31,7 +33,7 @@ A nivel de cada programa, todos los main.cpp fueron modificados para incluir out
 ---
 
 ## Compilación y Ejecución
-A continuación se detalla cómo compilar y ejecutar los proyectos de este repositorio. El usuario debe contar con una instalación previa de g++ y git, además de tener acceso a una terminal linux.  
+A continuación se detalla cómo compilar y ejecutar los proyectos de este repositorio en un entorno de trabajo Linux. El usuario debe contar con una instalación previa de g++ y git.  
 ### 1. Clonar el repositorio
 ```bash
 git clone https://github.com/CrimsonBlood45/AbstraccionyUD
