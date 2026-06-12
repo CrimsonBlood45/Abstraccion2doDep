@@ -1,0 +1,6 @@
+[
+  {
+    "programa": "Colas/Librerias/DatoBase",
+    "salida": "=== Menú de Operaciones con Cola ===\n1. Agregar elemento a la cola (enqueue)\n2. Eliminar elemento de la cola (dequeue)\n3. Ver el frente de la cola (front)\n4. Ver el tamaño de la cola (size)\n5. Ver si la cola está vacía (isEmpty)\n6. Mostrar elementos de la cola (mostrar)\n7. Salir\n> Opción: Agregar elemento a la cola (enqueue)\nIngrese el número a agregar: \t[ColaEnteros] enqueue(5)  |  tamaño: 1\n=== Menú de Operaciones con Cola ===\n1. Agregar elemento a la cola (enqueue)\n2. Eliminar elemento de la cola (dequeue)\n3. Ver el frente de la cola (front)\n4. Ver el tamaño de la cola (size)\n5. Ver si la cola está vacía (isEmpty)\n6. Mostrar elementos de la cola (mostrar)\n7. Salir\n> Opción: Agregar elemento a la cola (enqueue)\nIngrese el número a agregar: \t[ColaEnteros] enqueue(7)  |  tamaño: 2\n=== Menú de Operaciones con Cola ===\n1. Agregar elemento a la cola (enqueue)\n2. Eliminar elemento de la cola (dequeue)\n3. Ver el frente de la cola (front)\n4. Ver el tamaño de la cola (size)\n5. Ver si la cola está vacía (isEmpty)\n6. Mostrar elementos de la cola (mostrar)\n7. Salir\n> Saliendo del programa...\n"
+  }
+]
