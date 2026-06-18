@@ -42,12 +42,12 @@ void Arbol::mostrarNodo(const std::string& nodo,
                          bool               esUltimo,
                          int                peso) const {
     std::cout << prefijo
-              << (esUltimo ? "└── " : "├── ")
+              << (esUltimo ? "+-- " : "+-- ")
               << "(" << peso << " min)  [" << nodo << "]\n";
 
     if (!hijos_.count(nodo)) return;
     const auto& h = hijos_.at(nodo);
-    const std::string nuevoPrefijo = prefijo + (esUltimo ? "    " : "│   ");
+    const std::string nuevoPrefijo = prefijo + (esUltimo ? "    " : "|   ");
 
     for (size_t i = 0; i < h.size(); ++i) {
         // Buscar peso de la arista (nodo → h[i]) en adj_
@@ -61,10 +61,10 @@ void Arbol::mostrarNodo(const std::string& nodo,
 }
 
 void Arbol::mostrar() const {
-    std::cout << "\n╔══════════════════════════════════════════╗\n"
-              << "║  ÁRBOL  (BFS desde raíz)                 ║\n"
-              << "║  Raíz: " << raiz_ << "\n"
-              << "╚══════════════════════════════════════════╝\n"
+    std::cout << "\n+==========================================+\n"
+              << "|  ARBOL  (BFS desde raiz)                 |\n"
+              << "|  Raiz: " << raiz_ << "\n"
+              << "+==========================================+\n"
               << "  Nodos alcanzables: " << alcanzados_.size()
               << " / " << nodos_.size() << "\n\n"
               << "  [" << raiz_ << "]\n";
@@ -86,10 +86,10 @@ void Arbol::mostrar() const {
     for (const auto& n : nodos_) {
         if (!alcanzados_.count(n.etiqueta)) {
             if (header) {
-                std::cout << "\n  Nodos no alcanzables desde la raíz:\n";
+                std::cout << "\n  Nodos no alcanzables desde la raiz:\n";
                 header = false;
             }
-            std::cout << "  ⊗  [" << n.etiqueta << "]\n";
+            std::cout << "  [X]  [" << n.etiqueta << "]\n";
         }
     }
     std::cout << "\n";

@@ -31,9 +31,9 @@ static int leerOpcion(int min, int max) {
 // ── main ──────────────────────────────────────────────────────────────────────
 
 int main() {
-    std::cout << "\n╔══════════════════════════════════════════╗\n"
-              << "║   Grafos, Digrafos y Arboles — Dijkstra  ║\n"
-              << "╚══════════════════════════════════════════╝\n\n";
+    std::cout << "\n+==========================================+\n"
+              << "|   Grafos, Digrafos y Arboles - Dijkstra  |\n"
+              << "+==========================================+\n\n";
 
     // ─── 1. Cargar archivo ────────────────────────────────────────────────────
     DatosGrafo datos;
@@ -57,15 +57,15 @@ int main() {
     // ─── 2. Menú principal ────────────────────────────────────────────────────
     int op;
     do {
-        std::cout << "\n┌───────────────────────────────────────┐\n"
-                  << "│           MENU PRINCIPAL              │\n"
-                  << "├───────────────────────────────────────┤\n"
-                  << "│  1. Visualizar como Grafo             │\n"
-                  << "│  2. Visualizar como Digrafo           │\n"
-                  << "│  3. Visualizar como Arbol             │\n"
-                  << "│  4. Ruta mas corta (Dijkstra)         │\n"
-                  << "│  0. Salir                             │\n"
-                  << "└───────────────────────────────────────┘\n";
+        std::cout << "\n+---------------------------------------+\n"
+                  << "|           MENU PRINCIPAL              |\n"
+                  << "+---------------------------------------+\n"
+                  << "|  1. Visualizar como Grafo             |\n"
+                  << "|  2. Visualizar como Digrafo           |\n"
+                  << "|  3. Visualizar como Arbol             |\n"
+                  << "|  4. Ruta mas corta (Dijkstra)         |\n"
+                  << "|  0. Salir                             |\n"
+                  << "+---------------------------------------+\n";
         op = leerOpcion(0, 4);
 
         switch (op) {
@@ -124,7 +124,7 @@ int main() {
                     std::cout << "  Tiempo total: " << ruta.tiempo_total << " min\n"
                               << "  Ruta: ";
                     for (size_t i = 0; i < ruta.nodos.size(); ++i) {
-                        if (i) std::cout << "  →  ";
+                        if (i) std::cout << "  ->  ";
                         std::cout << ruta.nodos[i];
                     }
                     std::cout << "\n";
