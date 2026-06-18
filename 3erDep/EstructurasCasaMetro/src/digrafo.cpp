@@ -1,4 +1,4 @@
-#include "digrafo.h"
+#include "../include/digrafo.h"
 #include <iostream>
 
 void Digrafo::agregarArista(const Arista& a) {

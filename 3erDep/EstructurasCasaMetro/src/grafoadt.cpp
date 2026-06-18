@@ -1,4 +1,4 @@
-#include "grafoadt.h"
+#include "../include/grafoadt.h"
 #include <queue>
 #include <limits>
 #include <algorithm>

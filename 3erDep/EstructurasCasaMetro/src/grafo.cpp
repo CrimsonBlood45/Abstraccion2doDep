@@ -1,4 +1,4 @@
-#include "grafo.h"
+#include "../include/grafo.h"
 #include <iostream>
 
 void Grafo::agregarArista(const Arista& a) {

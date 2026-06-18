@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
 #include <limits>
-#include "grafo.h"
-#include "digrafo.h"
-#include "arbol.h"
-#include "parser.h"
+#include "src/grafoadt.cpp"
+#include "src/grafo.cpp"
+#include "src/digrafo.cpp"
+#include "src/arbol.cpp"
+#include "src/parser.cpp"
 
 // ── helpers de UI ─────────────────────────────────────────────────────────────
 
