@@ -64,9 +64,10 @@ int main() {
                   << "|  2. Visualizar como Digrafo           |\n"
                   << "|  3. Visualizar como Arbol             |\n"
                   << "|  4. Ruta mas corta (Dijkstra)         |\n"
+                  << "|  5. Encontrar ciclo (Loop)            |\n"
                   << "|  0. Salir                             |\n"
                   << "+---------------------------------------+\n";
-        op = leerOpcion(0, 4);
+        op = leerOpcion(0, 5);
 
         switch (op) {
 
@@ -110,25 +111,104 @@ int main() {
                 const std::string origen  = datos.nodos[si - 1].etiqueta;
                 const std::string destino = datos.nodos[di - 1].etiqueta;
 
-                // Dijkstra sobre el digrafo (respeta la dirección de las aristas)
                 Digrafo dg;
                 dg.cargar(datos.nodos, datos.aristas, datos.nombre);
-                const Ruta ruta = dg.dijkstra(origen, destino);
 
                 std::cout << "\n  Origen : " << origen  << "\n"
                           << "  Destino: " << destino << "\n";
 
+                Ruta ruta = dg.dijkstra(origen, destino);
+                bool inverso = false;
+
+                if (!ruta.existe) {
+                    ruta    = dg.dijkstraInverso(origen, destino);
+                    inverso = ruta.existe;
+                }
+
                 if (!ruta.existe) {
                     std::cout << "  No existe ruta entre estos nodos.\n";
                 } else {
+                    if (inverso)
                     std::cout << "  Tiempo total: " << ruta.tiempo_total << " min\n"
                               << "  Ruta: ";
+                    const std::string flecha = inverso ? "  <-  " : "  ->  ";
                     for (size_t i = 0; i < ruta.nodos.size(); ++i) {
-                        if (i) std::cout << "  ->  ";
+                        if (i) std::cout << flecha;
                         std::cout << ruta.nodos[i];
                     }
                     std::cout << "\n";
                 }
+                break;
+            }
+
+            case 5: {
+                std::cout << "\n  Estructura:\n"
+                          << "    1. Grafo (no dirigido)\n"
+                          << "    2. Digrafo (dirigido)\n";
+                const int tipo = leerOpcion(1, 2);
+
+                std::cout << "\n  Nodos disponibles:\n";
+                listarNodos(datos.nodos);
+                std::cout << "  Seleccione nodo inicial del ciclo: ";
+                const int ni = leerOpcion(1, (int)datos.nodos.size());
+                const std::string inicio = datos.nodos[ni - 1].etiqueta;
+
+                // Construir estructura, obtener ciclo y copia del adj antes de que
+                // el objeto local sea destruido al salir del bloque if/else
+                Ruta ciclo;
+                std::map<std::string, std::vector<std::pair<std::string,int>>> adj;
+                std::string encabezado;
+
+                if (tipo == 1) {
+                    Grafo g;
+                    g.cargar(datos.nodos, datos.aristas, datos.nombre);
+                    ciclo      = g.encontrarCiclo(inicio);
+                    adj        = g.getAdj();
+                    encabezado = "|  CICLO - Grafo: " + datos.nombre;
+                } else {
+                    Digrafo d;
+                    d.cargar(datos.nodos, datos.aristas, datos.nombre);
+                    ciclo      = d.encontrarCiclo(inicio);
+                    adj        = d.getAdj();
+                    encabezado = "|  CICLO - Digrafo: " + datos.nombre;
+                }
+
+                std::cout << "\n+==========================================+\n"
+                          << encabezado << "\n"
+                          << "+==========================================+\n";
+
+                if (!ciclo.existe) {
+                    std::cout << "  No existe ciclo desde: " << inicio << "\n\n";
+                    break;
+                }
+
+                std::cout << "  Inicio: " << inicio
+                          << "  |  Tiempo total: " << ciclo.tiempo_total << " min\n\n";
+
+                // Visualización vertical del loop
+                const auto& cn = ciclo.nodos;
+                for (size_t i = 0; i < cn.size(); ++i) {
+                    if (i == 0) {
+                        std::cout << "  .-> [" << cn[i] << "]\n";
+                    } else if (i == cn.size() - 1) {
+                        std::cout << "  |   [" << cn[i] << "] <-- regresa al inicio\n"
+                                  << "  |\n"
+                                  << "  +--(ciclo cerrado)\n";
+                        break;
+                    } else {
+                        std::cout << "  |   [" << cn[i] << "]\n";
+                    }
+
+                    if (i + 1 < cn.size()) {
+                        int w = 0;
+                        if (adj.count(cn[i]))
+                            for (const auto& [v, pw] : adj.at(cn[i]))
+                                if (v == cn[i + 1]) { w = pw; break; }
+                        std::cout << "  |        | (" << w << " min)\n"
+                                  << "  |        v\n";
+                    }
+                }
+                std::cout << "\n";
                 break;
             }
         }

@@ -9,6 +9,8 @@
       { "id": 5, "etiqueta": "MB Iztacalco" }
     ],
     "aristas": [
+      { "origen": "Metro Aquiles Serdán", "destino": "Metro Aquiles Serdán",  "costo": "$5", "tiempo": "10 min" },
+      { "origen": "Metro Tacuba",         "destino": "Metro Tacuba",  "costo": "$5", "tiempo": "10 min" },
       { "origen": "Metro Aquiles Serdán", "destino": "Metro Tacuba",  "costo": "$5", "tiempo": "10 min" },
       { "origen": "Metro Tacuba",         "destino": "Metro Xola",    "costo": "$0", "tiempo": "40 min" },
       { "origen": "Metro Xola",           "destino": "MB Xola",       "costo": "$0", "tiempo": "7 min"  },

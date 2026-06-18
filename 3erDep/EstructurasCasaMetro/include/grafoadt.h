@@ -41,6 +41,13 @@ public:
     Ruta dijkstra(const std::string& origen,
                   const std::string& destino) const;
 
+    // Dijkstra sobre el grafo transpuesto (aristas invertidas)
+    Ruta dijkstraInverso(const std::string& origen,
+                         const std::string& destino) const;
+
+    // Ciclo más corto que pasa por 'inicio' y regresa a él
+    Ruta encontrarCiclo(const std::string& inicio) const;
+
     void cargar(const std::vector<Nodo>&   nodos,
                 const std::vector<Arista>& aristas,
                 const std::string&         nombre);
@@ -48,6 +55,8 @@ public:
     const std::vector<Nodo>&   getNodos()   const { return nodos_;  }
     const std::vector<Arista>& getAristas() const { return aristas_; }
     const std::string&         getNombre()  const { return nombre_;  }
+    const std::map<std::string, std::vector<std::pair<std::string,int>>>&
+                               getAdj()     const { return adj_;     }
 };
 
 #endif // GRAFOADT_H
